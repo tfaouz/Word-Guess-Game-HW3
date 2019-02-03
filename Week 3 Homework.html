@@ -8,7 +8,7 @@
 
 <body>
 
-    
+
  <div>
   <p id="directions-text"> Guess what letter I am thinking of...</p>
   <p id="wins-text"></p>
@@ -34,12 +34,12 @@
         var userGuess = event.key;
 
         var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-    
-        if ((userGuess === computerGuess) {
-         wins++;
-        } else  {
-         losses++;
-        }
+        if ((userGuess === "a") || ((userGuess === "b") || ((userGuess === "c") || ((userGuess === "d") || ((userGuess === "e") || ((userGuess === "f") || ((userGuess === "g") || ((userGuess === "h") || ((userGuess === "i") || ((userGuess === "j") || ((userGuess === "k") || ((userGuess === "l") || ((userGuess === "m") || ((userGuess === "n") || ((userGuess === "o") || ((userGuess === "p") || ((userGuess === "q") || ((userGuess === "r") || ((userGuess === "s") || ((userGuess === "t") || ((userGuess === "u") || ((userGuess === "v") || ((userGuess === "w") || ((userGuess === "x") || ((userGuess === "y") || ((userGuess === "z") || {
+          if ((userGuess === computerGuess) {
+            wins++;
+          } else  {
+            losses++;
+          }
         
         directionsText.textContent = "";
         userChoiceText.textContent = "You chose: " + userGuess;
