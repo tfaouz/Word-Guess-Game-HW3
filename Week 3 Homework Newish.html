@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Week 3 Psychic Guess Game</title>
+</head>
+
+<body>
+
+
+    <div>
+        <p id="directions-text"> Guess what letter I am thinking of...</p>
+
+        <p id="wins-text"></p>
+        <p id="losses-text"></p>
+        <p id="guessesleft-text"></p>
+        <p id="guessessofar-text"></p>
+        <p id="Currentchoice-text"></p>
+
+
+    </div>
+
+    <script type="text/javascript">
+
+        var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+        var userGuess = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+        var loggedguesses = [];
+
+
+        var wins = 0;
+        var losses = 0;
+        var guessesleft = 10;
+        // guesses left is tracker set to 10 lives a live needs to be lost when a user guesses wrong
+
+        var directionsText = document.getElementById("directions-text");
+        var userChoiceText = document.getElementById("guessessofar-text");
+        var winsText = document.getElementById("wins-text");
+        var lossesText = document.getElementById("losses-text");
+        var allguess = document.getElementById("guessesleft-text")
+        var currentChoice = document.getElementById("Currentchoice-text")
+
+        document.onkeyup = function (event) {
+
+            var userGuess = event.key;
+
+            var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
+            if (userGuess === computerGuess) {
+                wins++;
+                // reset game
+            }
+
+            if (userGuess != computerGuess) {
+                guessesleft--;
+                // is guesses left 0?
+                losses++;
+                // reset game
+            }
+
+            // I need something here to track what happens when the tracker goes down
+            loggedguesses.push(userGuess)
+
+            directionsText.textContent = "";
+            currentChoice.textContent = "You chose: " + userGuess;
+            winsText.textContent = "wins: " + wins;
+            lossesText.textContent = "losses: " + losses;
+            allguess.textContent = "Guesses Left: " + guessesleft;
+            userChoiceText.textContent = "All Your Guesses: " + loggedguesses;
+
+            // ^ this is new can poss delete if needed 
+        };
+
+
+    </script>
+
+</body>
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
